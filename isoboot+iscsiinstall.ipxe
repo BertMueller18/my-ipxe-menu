@@ -1,0 +1,7 @@
+#!ipxe
+dhcp net0
+set keep-san 1
+set initiator-iqn iqn.1998-01.com.vmware:ipxe.olympus.bv.ar.us.local
+sanhook iscsi:192.168.65.2::::iqn.1991-05.com.microsoft:ipxe-target
+sanboot --drive 0x81 --no-describe http://192.168.65.3/Images/ISOs/myiso.iso
+

@@ -1,0 +1,12 @@
+#!ipxe
+echo
+initrd http://webserver.fqdn/iso/firmware.iso
+chain http://webserver.fqdn/memdisk/memdisk iso ||
+echo
+echo netboot failed, attempting to boot from local disk
+echo
+sanboot --no-describe --drive 0x80 ||
+echo
+echo local boot failed, booting ipxe shell
+echo
+shell

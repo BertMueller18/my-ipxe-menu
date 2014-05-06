@@ -1,0 +1,7 @@
+!ipxe
+set keep-san 1
+set initiator-iqn iqn.2003-12.org.centos:proteus-iscsi.olympus.bv.ar.us.local
+dhcp net0
+sanhook --drive 0x80 iscsi:atlas.olympus.bv.ar.us.local::::iqn.1991-05.microsoft:atlas-proteus-0-target
+sanboot --drive 0x81 --no-describe http://epimetheus.olympus.bv.ar.us.local/centos/5.7/isos/i386/CentOS-5.7-i386-netinstall.iso
+

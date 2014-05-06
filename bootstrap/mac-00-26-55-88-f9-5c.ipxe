@@ -1,0 +1,9 @@
+#!ipxe
+set boot-url http://ubuntu.fritz.box
+set base-url ${boot-url}/ezpe3/
+kernel ${boot-url}/wimboot
+initrd ${base-url}bootmgr          bootmgr
+initrd ${base-url}boot/bcd         BCD
+initrd ${base-url}boot/boot.sdi    boot.sdi
+initrd ${base-url}sources/boot.wim boot.wim
+boot || goto failed
